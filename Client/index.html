@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> API Tester</h1>
+        
+        <div class="input-group">
+            <select id="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+            <input type="text" id="url" placeholder="Enter API URL">
+            <button id="sendBtn">Send Request</button>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('json')">JSON Body</button>
+            <button class="tab-btn" onclick="switchTab('headers')">Headers (JSON)</button>
+        </div>
+
+        <div id="json-input" class="editor-section">
+            <textarea id="requestBody" placeholder='{ "key": "value" } (For POST/PUT)'></textarea>
+        </div>
+        <div id="headers-input" class="editor-section" style="display:none;">
+            <textarea id="requestHeaders" placeholder='{ "Authorization": "Bearer token" }'></textarea>
+        </div>
+
+        <div class="response-container hidden" id="responseContainer">
+            <div class="status-bar">
+                <div class="status-bar">
+                    <span id="statusBadge" class="badge">Status: Pending</span>
+                    <span id="timeBadge" class="badge">Ping: -- ms</span>
+                </div>
+            </div>
+            <pre id="responseBody">Response data will appear here...</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

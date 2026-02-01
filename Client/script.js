@@ -33,7 +33,7 @@ sendBtn.addEventListener('click', async () => {
         const body = bodyText ? JSON.parse(bodyText) : null;
         const headers = headersText ? JSON.parse(headersText) : null;
 
-        const res = await fetch('http://localhost:3000/api/proxy', {
+        const res = await fetch('/api/proxy', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url, method, headers, body })

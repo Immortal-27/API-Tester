@@ -55,7 +55,6 @@ sendBtn.addEventListener('click', async () => {
         } else {
             timeBadge.style.backgroundColor = '#dc3545';
         }
-
         responseBody.textContent = JSON.stringify(data.data, null, 2);
 
     } catch (err) {

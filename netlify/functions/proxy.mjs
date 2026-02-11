@@ -5,7 +5,6 @@ export default async (req) => {
       headers: { 'Content-Type': 'application/json' }
     });
   }
-
   try {
     const { url, method, headers, body } = await req.json();
 
